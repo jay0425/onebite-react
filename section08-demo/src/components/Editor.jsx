@@ -1,7 +1,8 @@
 const Editor = () => {
   return (
     <div>
-      <h1>Editor</h1>
+      <input type="text" />
+      <button>추가</button>
     </div>
   );
 };

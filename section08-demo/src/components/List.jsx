@@ -1,7 +1,7 @@
 const List = () => {
   return (
-    <div>
-      <h1>List</h1>
+    <div className="List">
+      <input type="text" placeholder="검색어를 입력하세요." />
     </div>
   );
 };
