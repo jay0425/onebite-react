@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './Header.css';
 
 const Header = () => {
   const [date, setDate] = useState(new Date()); // 매초마다 현재 시간을 업데이트
@@ -29,8 +30,8 @@ const Header = () => {
 
     return (
       <div className="Header">
-        <h3>오늘의 할일</h3>
-        {year + '년 ' + month + '월 ' + day + '일 ' + dayName + '요일 ' + localeTime}
+        <h2>오늘의 할일 😆</h2>
+        <p>{year + '년 ' + month + '월 ' + day + '일 ' + dayName + '요일 ' + localeTime}</p>
       </div>
     );
   };

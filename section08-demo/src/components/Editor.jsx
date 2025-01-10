@@ -1,6 +1,8 @@
+import './Editor.css';
+
 const Editor = () => {
   return (
-    <div>
+    <div className="Editor">
       <input type="text" />
       <button>추가</button>
     </div>
