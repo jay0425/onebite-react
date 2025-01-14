@@ -2,7 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import Editor from './components/Editor';
 import List from './components/List';
-import { useRef, useReducer, useCallback, createContext } from 'react';
+import { useRef, useReducer, useCallback, createContext, useMemo } from 'react';
 
 // 리렌더링 될 때마다 다시 생설될 필요 없고 애초에 상수라 값이 변할 일도 없어서
 // 컴포넌트 바깥에 mockTodos를 두도록 한다.
@@ -40,7 +40,8 @@ function reducer(state, action) {
   }
 }
 
-export const TodoContext = createContext();
+export const TodoStateContext = createContext();
+export const TodoDispatchContext = createContext();
 
 function App() {
   const [todos, dispatch] = useReducer(reducer, mockData);
@@ -72,20 +73,19 @@ function App() {
     });
   }, []);
 
+  const memoizedDispatch = useMemo(() => {
+    return { onCreate, onUpdate, onDelete };
+  }, []);
+
   return (
     <div className="App">
       <Header />
-      <TodoContext.Provider
-        value={{
-          todos,
-          onCreate,
-          onUpdate,
-          onDelete,
-        }}
-      >
-        <Editor />
-        <List />
-      </TodoContext.Provider>
+      <TodoStateContext.Provider value={todos}>
+        <TodoDispatchContext.Provider value={{ memoizedDispatch }}>
+          <Editor />
+          <List />
+        </TodoDispatchContext.Provider>
+      </TodoStateContext.Provider>
     </div>
   );
 }
