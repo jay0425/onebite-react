@@ -7,6 +7,7 @@ import Notfound from './pages/Notfound';
 
 import { getEmotionImage } from './util/get-emotion-image';
 import Button from './components/Button';
+import Header from './components/Header';
 
 // 1. "/" : 모든 일기를 조회하는 Home 페이지
 // 2. "/new" : 새로운 일기를 작성하는 New 페이지
@@ -21,6 +22,7 @@ function App() {
   };
   return (
     <>
+      <Header title={'Header'} leftChild={<Button text={'Left'} />} rightChild={<Button text={'Right'} />} />
       <Button
         text={'123'}
         type={'DEFAULT'}
