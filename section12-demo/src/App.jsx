@@ -12,7 +12,7 @@ import Header from './components/Header';
 function App() {
   return (
     <>
-      <Header />
+      <Header title={'asdf'} leftChild={'cnm'} rightChild={'wre'} />
       <Button text={'text'} />
       <Routes>
         <Route path="/" element={<Home />} />
