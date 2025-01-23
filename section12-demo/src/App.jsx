@@ -6,9 +6,14 @@ import Diary from './pages/Diary';
 import Edit from './pages/Edit';
 import Notfound from './pages/Notfound';
 
+import Button from './components/Button';
+import Header from './components/Header';
+
 function App() {
   return (
     <>
+      <Header />
+      <Button text={'text'} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/new" element={<New />} />

@@ -1,0 +1,10 @@
+.Button {
+  background-color: rgb(236, 236, 236);
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  /* 화면이 줄어도 글자가 줄 바꿈 되지 않게 */
+  white-space: nowrap;
+}
