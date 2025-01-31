@@ -10,13 +10,13 @@ import Notfound from './pages/Notfound';
 const mockData = [
   {
     id: 1,
-    createDate: new Date().getTime(),
+    createdDate: new Date().getTime(),
     emotionId: 1,
     content: '1번 일기 내용입니다.',
   },
   {
     id: 2,
-    createDate: new Date().getTime(),
+    createdDate: new Date().getTime(),
     emotionId: 2,
     content: '2번 일기 내용입니다.',
   },
@@ -41,7 +41,7 @@ function App() {
   const [data, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(3);
 
-  // 새로운 일 추가
+  // 새로운 일기 추가
   const onCreate = (createdDate, emotionId, content) => {
     // 새로운 일기를 추가하는 기능
     dispatch({
